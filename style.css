@@ -1,0 +1,101 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black: #333;
+    --color-white: #fff;
+    --color-primary: rgba(0,200,255,1);
+}
+
+body {
+    background-color: var(--color-black);
+}
+
+.button-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-wrap::before {
+    position: absolute;
+    content: '';
+    inset: -20px;
+}
+
+.button {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 35px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    padding: 16px 48px;
+    min-width: 150px;
+    border: 2px solid var(--color-white);
+    outline: none;
+}
+
+.button-text {
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+.button-fill {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250%;
+    padding-top: 250%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transition: all 0.8s ease;
+}
+
+.button-wrap:hover .button-fill {
+    transform: translate(-50%, -50%) scale(1);
+    z-index: -1;
+}
+
+.button-wrap.top {
+    top: 35%;
+}
+
+.button-wrap.bottom {
+    top: 65%;
+}
+
+.button-wrap.left {
+    left: 25%;
+}
+
+.button-wrap.right {
+    left: 75%;
+}
+
+.mouse {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.mouse.active {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(5);
+}
+
+
+
+
